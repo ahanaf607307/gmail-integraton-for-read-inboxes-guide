@@ -41,9 +41,17 @@ All routes are prefixed with `/api/email`.
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/email/connect` | Redirects user to Google Consent screen for Gmail access. |
+| `GET` | `/api/email/connect` | Returns a JSON response with the Google OAuth URL. The frontend should open this URL in a new window/tab. |
 | `GET` | `/api/email/callback` | Internal callback handled by Google after user approval. |
 | `GET` | `/api/email/inbox` | Fetches last 20 emails for the logged-in user. |
+
+### Connect Response Example
+```json
+{
+  "success": true,
+  "url": "https://accounts.google.com/o/oauth2/v2/auth?..."
+}
+```
 
 ### Inbox Filtering
 You can filter the inbox by category using query parameters:
@@ -52,7 +60,7 @@ You can filter the inbox by category using query parameters:
 - `GET /api/email/inbox?category=updates`
 - `GET /api/email/inbox?category=forums`
 
-### Response Format
+### Inbox Response Format
 ```json
 {
   "success": true,
