@@ -37,13 +37,14 @@ GOOGLE_CALLBACK_URL_EMAIL=http://localhost:8001/api/email/callback
 
 ## 🚀 Routes & Usage
 
-All routes are prefixed with `/api/email`.
+All routes are prefixed with `/api/email`. **Note: These routes (except callback) require a Bearer Token in the Authorization header.**
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/email/connect` | Returns a JSON response with the Google OAuth URL. The frontend should open this URL in a new window/tab. |
-| `GET` | `/api/email/callback` | Internal callback handled by Google after user approval. |
-| `GET` | `/api/email/inbox` | Fetches last 20 emails for the logged-in user. |
+| `GET` | `/api/email/connect` | Returns a JSON response with the Google OAuth URL. **Requires Auth.** |
+| `GET` | `/api/email/callback` | Internal callback handled by Google. **No Auth header required** (uses state). |
+| `GET` | `/api/email/inbox` | Fetches last 20 emails for the logged-in user. **Requires Auth.** |
+
 
 ### Connect Response Example
 ```json
