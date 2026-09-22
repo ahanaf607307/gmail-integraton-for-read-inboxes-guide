@@ -1,4 +1,4 @@
-# Gmail Integration Module
+# Gmail Integration Module 
 
 This module provides a separate Google OAuth 2.0 integration specifically for Gmail access. It is completely isolated from the main Google Login system.
 
