@@ -76,7 +76,7 @@ You can filter the inbox by category using query parameters:
   ]
 }
 ```
-
+   
 ## 🛡 Security
 - **Isolation**: Uses `GOOGLE_CLIENT_ID_EMAIL` to prevent collision with login credentials.
 - **Privacy**: Admin cannot access other users' emails.
